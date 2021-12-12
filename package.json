@@ -1,0 +1,23 @@
+{
+  "name": "webrtc-manual-signaling",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Shuntaro Nishizawa <me@shun.technology>",
+  "license": "MIT",
+  "private": true,
+  "packageManager": "yarn@3.1.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "format": "prettier -w --ignore-path .gitignore '**/*.{js,ts}'"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.1",
+    "typescript": "^4.5.3",
+    "vite": "^2.7.1",
+    "vite-plugin-html": "^2.1.1"
+  }
+}
