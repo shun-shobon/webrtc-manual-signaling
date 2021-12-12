@@ -2,13 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,shrink-to-fit=no"
-    />
-    <title>Hello, world!</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <title>WebRTC Sample</title>
   </head>
   <body>
     <script type="module" src="/src/index.ts"></script>
+    <div class="container mx-auto my-4 flex flex-col gap-8">
+      <!-- ビデオ映像 -->
+      <div class="grid grid-cols-2 gap-2">
+        <div class="flex flex-col items-stretch">
+          <p class="text-center text-lg">自分の映像</p>
+          <video class="rounded-lg" id="my-video" autoplay></video>
+        </div>
+        <div class="flex flex-col items-stretch">
+          <p class="text-center text-lg">相手の映像</p>
+          <video class="rounded-lg" id="other-video" autoplay></video>
+        </div>
+      </div>
+      <div class="mx-10 border-t-2 border-t-grey-300"></div>
+      <!-- SDP関係 -->
+      <div class="grid grid-cols-2 gap-2">
+        <label class="flex flex-col items-center gap-2">
+          <span class="text-lg">SDP Output</span>
+          <textarea
+            class="resize-none w-full rounded-lg border-2 border-grey-300 outline-teal-300"
+            id="sdp-output"
+            readonly
+            rows="10"
+          ></textarea>
+          <button class="px-4 py-2 rounded-lg bg-teal-400 text-white" id="sdp-create-offer-button">
+            SDP オファー発行
+          </button>
+        </label>
+        <label class="flex flex-col items-center gap-2">
+          <span class="text-lg">SDP Input</span>
+          <textarea
+            class="resize-none w-full rounded-lg border-2 border-grey-300 outline-teal-300"
+            id="sdp-input"
+            rows="10"
+          ></textarea>
+          <button class="px-4 py-2 rounded-lg bg-teal-400 text-white" id="sdp-receive-button">SDP 受け取り</button>
+        </label>
+      </div>
+      <div class="mx-10 border-t-2 border-t-grey-300"></div>
+      <!-- ICE Candidate関係 -->
+      <div class="grid grid-cols-2 gap-2">
+        <label class="flex flex-col items-center gap-2">
+          <span class="text-lg">ICE Output</span>
+          <textarea
+            class="resize-none w-full rounded-lg border-2 border-grey-300 outline-teal-300"
+            id="ice-output"
+            readonly
+            rows="10"
+          ></textarea>
+        </label>
+        <label class="flex flex-col items-center gap-2">
+          <span class="text-lg">ICE Input</span>
+          <textarea
+            class="resize-none w-full rounded-lg border-2 border-grey-300 outline-teal-300"
+            id="ice-input"
+            rows="10"
+          ></textarea>
+          <button class="px-4 py-2 rounded-lg bg-teal-400 text-white" id="ice-receive-button">ICE 受け取り</button>
+        </label>
+      </div>
+    </div>
   </body>
 </html>

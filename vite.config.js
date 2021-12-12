@@ -1,8 +1,8 @@
 import { minifyHtml } from "vite-plugin-html";
 
 const config = {
-  esbuild: {
-    jsxInject: 'import React from "react"',
+  build: {
+    target: "esnext",
   },
   plugins: [minifyHtml()],
 };
